@@ -1,0 +1,17 @@
+      <div class="product-price">
+                  {% assign rPrice = product.price %}
+                        {% assign cPrice = product.compare_at_price %}
+
+                        {% if rPrice != cPrice %}
+                            {% capture price %}
+                                <span class="regural-price">{{ rPrice | money }}</span>
+                                <span class="compare-price">{{ cPrice | money }}</span>
+                            {% endcapture %}
+                        {% else %}
+                            {% capture price %}
+                                <span class="regural-price">{{ rPrice | money }}</span>
+                            {% endcapture %}
+                        {% endif %}
+
+                        {{ price }}
+            </div>
